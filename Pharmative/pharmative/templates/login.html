@@ -1,0 +1,123 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="{% static 'assets/vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+     <style>
+        i {
+            height: 30px !important;
+            width: 30px!important;
+            font-size: 30px;
+        }
+        h2 {
+            font-size: 30px;
+        }
+        h3 {
+            font-size: 30px;
+            color: white;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <body class="bg-white">
+        <!-- url('/img/hero-pattern.svg') -->
+
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert {{ message.tags }} m-2" id="msg" role="alert">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+
+        <form method="post">
+            {% csrf_token %}
+            <div class="min-w-screen min-h-screen  flex items-center justify-center px-5 py-5">
+                <div class="bg-gray-100 text-gray-500 rounded-3xl shadow-xl w-full overflow-hidden" style="max-width:1000px">
+                    <div class="md:flex w-full">
+
+                        <div class="w-full md:w-1/2 py-10 px-5 md:px-10">
+                            <div class="text-center mb-10">
+                                <h1 class="font-bold text-3xl text-gray-900">Sign In</h1>
+
+                            </div>
+                            <div>
+                                <div class="flex -mx-3">
+                                    <div class="w-full px-3 mb-5">
+                                        <label for="" class="text-xs font-semibold px-1">User Name</label>
+                                        <div class="flex">
+                                            <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-email-outline text-gray-400 text-lg"></i></div>
+                                            <input type="text" name="username" class="w-full -ml-10 pl-3 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500" placeholder="Enter Your User Name">
+{#                                            {{ form.varsityEmail }}#}
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+
+
+                                <div class="flex -mx-3">
+                                    <div class="w-full px-3 mb-5">
+                                        <label for="" class="text-xs font-semibold px-1">Password</label>
+                                        <div class="flex">
+                                            <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-email-outline text-gray-400 text-lg"></i></div>
+                                            <input type="password" name="password" class="w-full -ml-10 pl-3 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500" placeholder="**********">
+{#                                            {{ form.password }}#}
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="flex -mx-3">
+                                    <div class="w-full px-3 mb-5">
+                                        <button type="submit" class="block w-full max-w-xs mx-auto bg-indigo-500 hover:bg-indigo-700 focus:bg-indigo-700 text-white rounded-lg px-3 py-3 font-semibold">SIGN IN</button>
+                                    </div>
+                                </div>
+{#                                <div class="text-center">#}
+{#                                    <h2>Signup with Social</h2>#}
+{#                                    <a href="{% url 'social:begin' 'linkedin-oauth2' %}">#}
+{#                                        <i class="fa-brands fa-linkedin mt-2"></i>#}
+{#                                    </a>#}
+{#                                    <a href="{% url 'social:begin' 'google-oauth2' %}">#}
+{#                                        <i class="fa-solid fa-envelope mt-2"></i>#}
+{#                                    </a>#}
+{##}
+{#                                </div>#}
+                            </div>
+                        </div>
+                        <div class="hidden md:block w-1/2 bg-indigo-500 log-in">
+                            <div class="flex -mx-3 ">
+                                <div class="w-full px-3 mt-48">
+                                    <a href="{% url 'register' %}">
+                                        <h3>SIGN UP</h3>
+{#                                        <button class="block w-full max-w-xs mx-auto bg-indigo-500 hover:bg-indigo-700 focus:bg-indigo-700 text-white rounded-lg px-3 py-3 font-semibold">SIGN UP</button>button#}
+                                    </a>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        
+
+
+
+
+        
+    </body>
+</body>
+</html>
+
+
+
+
